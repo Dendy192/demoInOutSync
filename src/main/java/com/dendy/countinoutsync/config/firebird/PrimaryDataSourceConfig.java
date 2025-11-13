@@ -43,6 +43,7 @@ public class PrimaryDataSourceConfig {
         Map<String, Object> properties = new HashMap<>();
         System.out.println("Propreties: "+env.getProperty("spring.jpa.properties.hibernate.dialect"));
         properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
+        properties.put("hibernate.hbm2ddl.auto", "none"); // ✅ only for third datasource
         return builder
                 .dataSource(dataSource)
                 .packages("com.dendy.countinoutsync.firebird.primary.model")
