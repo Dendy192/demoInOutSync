@@ -1,4 +1,4 @@
-package com.dendy.countinoutsync.config;
+package com.dendy.countinoutsync.config.firebird;
 
 
 import jakarta.persistence.EntityManagerFactory;
