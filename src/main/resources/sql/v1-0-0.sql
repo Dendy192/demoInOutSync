@@ -17,9 +17,6 @@ create table MSTCAPACITY
     MSTCUR  BIGINT,
     constraint PK_MSTCAPACITY primary key (MSTTYPE)
 );
--- MSTGATE definition
--- Drop table
--- DROP TABLE MSTGATE;
 
 create table MSTGATE
 (
