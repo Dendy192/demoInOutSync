@@ -1,10 +1,14 @@
 package com.dendy.countinoutsync.firebird.primary.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "TRNKRTLANG")
 public class TRNKRTLANGModel {
 
@@ -31,60 +35,4 @@ public class TRNKRTLANGModel {
     @Column(name = "TRNGATEOUT")
     private String gateKeluar;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCardNo() {
-        return cardNo;
-    }
-
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
-    }
-
-
-    public String getGateMasuk() {
-        return gateMasuk;
-    }
-
-    public void setGateMasuk(String gateMasuk) {
-        this.gateMasuk = gateMasuk;
-    }
-
-    public int getCekOut() {
-        return cekOut;
-    }
-
-    public void setCekOut(int cekOut) {
-        this.cekOut = cekOut;
-    }
-
-    public String getGateKeluar() {
-        return gateKeluar;
-    }
-
-    public void setGateKeluar(String gateKeluar) {
-        this.gateKeluar = gateKeluar;
-    }
-
-    public Timestamp getTapMasuk() {
-        return tapMasuk;
-    }
-
-    public void setTapMasuk(Timestamp tapMasuk) {
-        this.tapMasuk = tapMasuk;
-    }
-
-    public Timestamp getTapKeluar() {
-        return tapKeluar;
-    }
-
-    public void setTapKeluar(Timestamp tapKeluar) {
-        this.tapKeluar = tapKeluar;
-    }
 }

@@ -1,6 +1,7 @@
 package com.dendy.countinoutsync.config.firebird;
 
 import jakarta.persistence.EntityManagerFactory;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -20,10 +21,10 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.dendy.countinoutsync.firebird.primary.service", entityManagerFactoryRef = "primaryEntityManagerFactory", transactionManagerRef = "primaryTransactionManager")
+@RequiredArgsConstructor
 public class PrimaryDataSourceConfig {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     @Primary
     @Bean(name = "primaryDataSource")

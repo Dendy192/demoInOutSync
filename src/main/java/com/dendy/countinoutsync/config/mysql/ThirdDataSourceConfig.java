@@ -1,7 +1,7 @@
 package com.dendy.countinoutsync.config.mysql;
 
 import jakarta.persistence.EntityManagerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -19,10 +19,10 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.dendy.countinoutsync.mysql.service", entityManagerFactoryRef = "thirdEntityManagerFactory", transactionManagerRef = "thirdTransactionManager")
+@RequiredArgsConstructor
 public class ThirdDataSourceConfig {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     @Bean(name = "thirdDataSource")
     public DataSource thirdDataSource() {

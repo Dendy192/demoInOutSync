@@ -1,4 +1,4 @@
-package com.dendy.countinoutsync.firebird.secondary.model;
+package com.dendy.countinoutsync.mysql.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 @Table(name = "PIC001")
-public class PIC001Model {
+public class PIC001 {
     @Id
     @Column(name = "PLOG")
     private Timestamp plog;
