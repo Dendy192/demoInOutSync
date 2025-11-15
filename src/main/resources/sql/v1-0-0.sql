@@ -1,0 +1,395 @@
+create table MSTADMIN
+(
+    MSTID     VARCHAR(10) not null,
+    MSTTAG    VARCHAR(20),
+    MSTNAMA   VARCHAR(20),
+    MSTPASS   VARCHAR(20),
+    MSTACTIVE smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    constraint PK_MSTADMIN primary key (MSTID)
+);
+
+create table MSTCAPACITY
+(
+    MSTTYPE smallint not null,
+    MSTMAX  BIGINT,
+    MSTCUR  BIGINT,
+    constraint PK_MSTCAPACITY primary key (MSTTYPE)
+);
+-- MSTGATE definition
+-- Drop table
+-- DROP TABLE MSTGATE;
+
+create table MSTGATE
+(
+    MSTID     VARCHAR(10) not null,
+    MSTTYPE   smallint,
+    MSTLOKASI VARCHAR(50),
+    MSTIPIN   VARCHAR(20),
+    MSTPRTIN  VARCHAR(10),
+    MSTISOUT  smallint,
+    MSTIPOUT  VARCHAR(20),
+    MSTPRTOUT VARCHAR(10),
+    MSTISUHF  smallint,
+    MSTIPUHF  VARCHAR(20),
+    MSTPRTUHF VARCHAR(10),
+    MSTTYCON  smallint,
+    MSTIPCON  VARCHAR(20),
+    MSTPRTCON VARCHAR(10),
+    MSTACTIVE smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    MSTACCESS smallint,
+    MSTTAMU   smallint,
+    MSTKARY   smallint,
+    MSTC1STAT smallint,
+    MSTC1IPAD VARCHAR(20),
+    MSTC1URL  VARCHAR(100),
+    MSTC2STAT smallint,
+    MSTC2IPAD VARCHAR(20),
+    MSTC2URL  VARCHAR(100),
+    MSTC3STAT smallint,
+    MSTC3IPAD VARCHAR(20),
+    MSTC3URL  VARCHAR(100),
+    MSTC4STAT smallint,
+    MSTC4IPAD VARCHAR(20),
+    MSTC4URL  VARCHAR(100),
+    constraint PK_MSTGATE primary key (MSTID)
+);
+
+
+create table MSTKARY
+(
+    MSTID     VARCHAR(20) not null,
+    MSTTAG    VARCHAR(30),
+    MSTNAMA1  VARCHAR(20),
+    MSTNAMA2  VARCHAR(50),
+    MSTJAB    VARCHAR(50),
+    MSTPASS   VARCHAR(20),
+    MSTACTIVE smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    MSTTMP1   VARCHAR(2500),
+    MSTTMP2   VARCHAR(2500),
+    MSTTMP3   VARCHAR(2500),
+    MSTTMP4   VARCHAR(2500),
+    MSTPOS    smallint,
+    MSTPIC    smallint,
+    MSTMANDOR VARCHAR(50),
+    MSTPOS2   smallint,
+    MSTPOS3   smallint,
+    MSTPOS4   smallint,
+    MSTPOS5   smallint,
+    MSTUNV    smallint,
+    MSTVALID  DATE,
+    MSTTARIP  numeric(15, 2),
+    MSTPIC2   smallint,
+    MSTTAG2   VARCHAR(30),
+    MSTTAG3   VARCHAR(30),
+    MSTTAG4   VARCHAR(30),
+    MSTTAG5   VARCHAR(30),
+    MSTTYPE1  smallint,
+    MSTTYPE2  smallint,
+    MSTTYPE3  smallint,
+    constraint PK_MSTKARY primary key (MSTID)
+);
+
+
+create table MSTPERUSH
+(
+    MSTNAME   VARCHAR(50) not null,
+    MSTACTIVE smallint,
+    MSTTYPE   smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    constraint PK_MSTPERUSH primary key (MSTNAME)
+);
+
+
+create table MSTTAMU
+(
+    MSTID     VARCHAR(10) not null,
+    MSTTAG    VARCHAR(20),
+    MSTNAMA   VARCHAR(20),
+    MSTPASS   VARCHAR(20),
+    MSTACTIVE smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    MSTPOS    smallint,
+    constraint PK_MSTTAMU primary key (MSTID)
+);
+
+
+create table MSTTMP
+(
+    MSTID   VARCHAR(20) not null,
+    MSTTMP1 VARCHAR(2500),
+    MSTTMP2 VARCHAR(2500),
+    MSTTMP3 VARCHAR(2500),
+    MSTTMP4 VARCHAR(2500),
+    constraint PK_MSTTMP primary key (MSTID)
+);
+-- MSTUHFTAG definition
+-- Drop table
+-- DROP TABLE MSTUHFTAG;
+
+create table MSTUHFTAG
+(
+    MSTID     VARCHAR(10) not null,
+    MSTTAG    VARCHAR(30),
+    MSTNAMA   VARCHAR(20),
+    MSTNOPOL  VARCHAR(10),
+    MSTJAB    VARCHAR(50),
+    MSTACTIVE smallint,
+    MSTCREATE VARCHAR(27),
+    MSTMODIFY VARCHAR(27),
+    constraint PK_MSTUHFTAG primary key (MSTID)
+);
+
+
+create table SYSACCESS
+(
+    USID        VARCHAR(10)        not null,
+    USNAME      VARCHAR(30),
+    USPOS       VARCHAR(30),
+    USACCESS    VARCHAR(256),
+    USPASS      VARCHAR(20),
+    USACTIVE    smallint default 0 not null,
+    CREATEDUSER VARCHAR(10),
+    CREATEDDATE TIMESTAMP NULL,
+    UPDATEDUSER VARCHAR(10),
+    UPDATEDDATE TIMESTAMP NULL
+);
+-- SYSMENU definition
+-- Drop table
+-- DROP TABLE SYSMENU;
+
+create table SYSMENU
+(
+    MENUID      INTEGER not null,
+    MENUPOS     smallint,
+    MENUGROUP   VARCHAR(100),
+    MENUCAPTION VARCHAR(100),
+    MENUSUB     VARCHAR(100),
+    MENUVISIBLE smallint default 0,
+    MENUMAX     INTEGER,
+    constraint PK_SYSMENU primary key (MENUID)
+);
+-- SYSNUMBERING definition
+-- Drop table
+-- DROP TABLE SYSNUMBERING;
+
+create table SYSNUMBERING
+(
+    LASTNUMBER   INTEGER,
+    LASTPOSITION VARCHAR(5),
+    LASTUSEDUSER VARCHAR(10),
+    LASTUSEDDATE TIMESTAMP,
+    LASTMONTH    INTEGER,
+    LASTYEAR     smallint
+);
+
+
+create table SYSPERIOD
+(
+    PERIODNUM         smallint           not null,
+    PERIODNAME        VARCHAR(50),
+    PERIODSTART       TIMESTAMP NULL,
+    PERIODEND         TIMESTAMP NULL,
+    PERIODLOCK        TIMESTAMP NULL,
+    PERIODCLOSED      smallint default 0 not null,
+    PERIODCREATEDUSER VARCHAR(10),
+    PERIODCREATEDDATE TIMESTAMP NULL,
+    PERIODUPDATEDUSER VARCHAR(10),
+    PERIODUPDATEDDATE TIMESTAMP NULL,
+    PERIODCLOSEDUSER  VARCHAR(10),
+    PERIODCLOSEDDATE  TIMESTAMP NULL,
+    PERIODOPENEDUSER  VARCHAR(10),
+    PERIODOPENEDDATE  TIMESTAMP NULL,
+    PERIODFILENAME    VARCHAR(50),
+    constraint PK_SYSPERIOD primary key (PERIODNUM)
+);
+-- SYSPROFILE definition
+-- Drop table
+-- DROP TABLE SYSPROFILE;
+
+create table SYSPROFILE
+(
+    KEYWORD     VARCHAR(10),
+    PROFILE     VARCHAR(50),
+    CREATEDDATE TIMESTAMP
+);
+-- TRNEXTLANG definition
+-- Drop table
+-- DROP TABLE TRNEXTLANG;
+
+create table TRNEXTLANG
+(
+    TRNNO     BIGINT not null,
+    TRNID     VARCHAR(10),
+    TRNTIME   TIMESTAMP,
+    TRNMAN    VARCHAR(20),
+    TRNTYPE   smallint,
+    TRNMTH    smallint,
+    TRNIPL    numeric(15, 2),
+    TRNTOTAL  numeric(15, 2),
+    TRNCOST   numeric(15, 2),
+    TRNSDATE  DATE,
+    TRNEDATE  DATE,
+    TRNREPORT smallint,
+    TRNCR     VARCHAR(27),
+    constraint PK_TRNEXTLANG primary key (TRNNO)
+);
+
+
+create table TRNGENLOG
+(
+    TRNLOG   TIMESTAMP,
+    TRNID    VARCHAR(20),
+    TRNTYPE  smallint,
+    TRNGATE  VARCHAR(10),
+    TRNINOUT smallint
+);
+
+
+create table TRNGENLOGV
+(
+    TRNLOG  TIMESTAMP,
+    TRNID   VARCHAR(20),
+    TRNGATE VARCHAR(10),
+    TRNPOS  VARCHAR(10),
+    TRNNAMA VARCHAR(20),
+    TRNTAMU VARCHAR(20)
+);
+
+
+create table TRNKRTLANG
+(
+    TRNID      VARCHAR(10) not null,
+    TRNCARDNO  smallint,
+    TRNTIMEIN  TIMESTAMP NULL,
+    TRNGATEIN  VARCHAR(10),
+    TRNCEKOUT  smallint,
+    TRNTIMEOUT TIMESTAMP NULL,
+    TRNGATEOUT VARCHAR(10)
+);
+
+
+create table TRNKRTTAMU
+(
+    TRNID      VARCHAR(10) not null,
+    TRNTIMEIN  TIMESTAMP NULL,
+    TRNGATEIN  VARCHAR(10),
+    TRNCEKOUT  smallint,
+    TRNTIMEOUT TIMESTAMP NULL,
+    TRNGATEOUT VARCHAR(10)
+);
+
+
+create table TRNOFFLINE
+(
+    TRNLOG  VARCHAR(50) not null,
+    TRNTAG  VARCHAR(20),
+    TRNGATE VARCHAR(10),
+    TRNTIME TIMESTAMP,
+    TRNTYPE smallint,
+    constraint PK_TRNOFFLINE primary key (TRNLOG)
+);
+
+
+create table TRNSYSLOG
+(
+    TRNLOG TIMESTAMP,
+    TRNACT VARCHAR(20),
+    TRNPOS smallint,
+    TRNID  VARCHAR(20),
+    TRNOLD VARCHAR(1024),
+    TRNUSR VARCHAR(27)
+);
+
+
+create table TRNTAMU
+(
+    TRNID     VARCHAR(10) not null,
+    TRNKARTU  VARCHAR(10),
+    TRNNAMA   VARCHAR(50),
+    TRNINST   VARCHAR(50),
+    TRNKEPR   VARCHAR(50),
+    TRNJUML   smallint,
+    TRNEXPD   DATE,
+    TRNNOTE   VARCHAR(1024),
+    TRNLIST   VARCHAR(1024),
+    TRNBLOCK  smallint,
+    TRNACTIVE smallint,
+    TRNCREATE VARCHAR(27),
+    TRNMODIFY VARCHAR(27),
+    TRNFCO    smallint,
+    TRNBLK    smallint,
+    constraint PK_TRNTAMU primary key (TRNID)
+);
+
+CREATE TABLE PIC001
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC002
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC003
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC004
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC005
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC006
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC007
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
+CREATE TABLE PIC008
+(
+    PLOG  TIMESTAMP,
+    PID   VARCHAR(20),
+    PTYPE VARCHAR(15),
+    PDATA LONGBLOB
+);
+
