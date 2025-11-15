@@ -39,7 +39,6 @@ public class SecondaryDataSourceConfig {
             @Qualifier("secondaryDataSource") DataSource dataSource) {
         Map<String, Object> properties = new HashMap<>();
         properties.put("hibernate.dialect", env.getProperty("spring.jpa.secondary.properties.hibernate.dialect"));
-        properties.put("hibernate.hbm2ddl.auto", "none"); // ✅ only for third datasource
         return builder
                 .dataSource(dataSource)
                 .packages("com.dendy.countinoutsync.firebird.secondary.model")
