@@ -4,10 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "TRNGENLOG")
 public class TRNGENLOG {
     @Id
@@ -20,27 +24,4 @@ public class TRNGENLOG {
     @Column(name = "TRNTYPE")
     private int type;
 
-    public Timestamp getLog() {
-        return log;
-    }
-
-    public void setLog(Timestamp log) {
-        this.log = log;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
 }

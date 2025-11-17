@@ -1,9 +1,9 @@
-package com.dendy.countinoutsync.mysql.service;
+package com.dendy.countinoutsync.mysql.repository;
 
 import com.dendy.countinoutsync.mysql.model.MSTPERUSH;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PerusahaanService extends JpaRepository<MSTPERUSH, String> {
+public interface PerusahaanRepository extends JpaRepository<MSTPERUSH, String> {
 }

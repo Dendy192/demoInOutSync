@@ -1,9 +1,9 @@
-package com.dendy.countinoutsync.mysql.service;
+package com.dendy.countinoutsync.mysql.repository;
 
 import com.dendy.countinoutsync.mysql.model.SYSACCES;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AccessService extends JpaRepository<SYSACCES, String> {
+public interface AccessRepository extends JpaRepository<SYSACCES, String> {
 }

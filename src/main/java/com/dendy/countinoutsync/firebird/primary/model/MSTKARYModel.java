@@ -4,10 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
+@NoArgsConstructor
 @Entity
+@Data
 @Table(name = "MSTKARY")
 public class MSTKARYModel {
     @Id
@@ -25,7 +29,6 @@ public class MSTKARYModel {
 
     @Column(name = "MSTMANDOR")
     private String perusahaan;
-
 
     @Column(name = "MSTPASS")
     private String pass;
@@ -45,92 +48,4 @@ public class MSTKARYModel {
     @Column(name = "MSTTMP1")
     private String noKtp;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getJabatan() {
-        return jabatan;
-    }
-
-    public void setJabatan(String jabatan) {
-        this.jabatan = jabatan;
-    }
-
-    public String getNoKartu() {
-        return noKartu;
-    }
-
-    public void setNoKartu(String noKartu) {
-        this.noKartu = noKartu;
-    }
-
-    public String getPerusahaan() {
-        return perusahaan;
-    }
-
-    public void setPerusahaan(String perusahaan) {
-        this.perusahaan = perusahaan;
-    }
-
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public Date getBerlaku() {
-        return berlaku;
-    }
-
-    public void setBerlaku(Date berlaku) {
-        this.berlaku = berlaku;
-    }
-
-    public int getUnv() {
-        return unv;
-    }
-
-    public void setUnv(int unv) {
-        this.unv = unv;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getNoKtp() {
-        return noKtp;
-    }
-
-    public void setNoKtp(String noKtp) {
-        this.noKtp = noKtp;
-    }
 }
