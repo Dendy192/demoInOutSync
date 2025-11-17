@@ -1,4 +1,4 @@
-package com.dendy.countinoutsync.firebird.primary.model;
+package com.dendy.countinoutsync.mysql.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
-@NoArgsConstructor
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "MSTKARY")
-public class MSTKARYModel {
+public class MSTKARY {
     @Id
     @Column(name = "MSTID")
     private String id;
@@ -29,6 +29,7 @@ public class MSTKARYModel {
 
     @Column(name = "MSTMANDOR")
     private String perusahaan;
+
 
     @Column(name = "MSTPASS")
     private String pass;

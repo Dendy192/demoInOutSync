@@ -1,6 +1,9 @@
-package com.dendy.countinoutsync.firebird.primary.model;
+package com.dendy.countinoutsync.mysql.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,7 +13,7 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 @Table(name = "TRNKRTLANG")
-public class TRNKRTLANGModel {
+public class TRNKRTLANG {
 
 
     @Column(name = "TRNID")

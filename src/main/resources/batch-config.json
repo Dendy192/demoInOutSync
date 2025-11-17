@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "name": "syncTable1",
+      "cron": "*/10 * * * * ?",
+      "pageSize": 500,
+      "model": "SYSACCES",
+      "service": "accessService"
+    }
+
+  ]
+}

@@ -1,6 +1,7 @@
 package com.dendy.countinoutsync.config.firebird;
 
 import jakarta.persistence.EntityManagerFactory;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -20,10 +21,10 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.dendy.countinoutsync.firebird.primary.service", entityManagerFactoryRef = "primaryEntityManagerFactory", transactionManagerRef = "primaryTransactionManager")
+@RequiredArgsConstructor
 public class PrimaryDataSourceConfig {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     @Primary
     @Bean(name = "primaryDataSource")
@@ -41,9 +42,7 @@ public class PrimaryDataSourceConfig {
     public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                               @Qualifier("primaryDataSource") DataSource dataSource) {
         Map<String, Object> properties = new HashMap<>();
-        System.out.println("Propreties: "+env.getProperty("spring.jpa.properties.hibernate.dialect"));
         properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
-        properties.put("hibernate.hbm2ddl.auto", "none"); // ✅ only for third datasource
         return builder
                 .dataSource(dataSource)
                 .packages("com.dendy.countinoutsync.firebird.primary.model")

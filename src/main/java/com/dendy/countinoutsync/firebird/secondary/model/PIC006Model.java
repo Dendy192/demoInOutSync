@@ -1,10 +1,14 @@
 package com.dendy.countinoutsync.firebird.secondary.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "PIC006")
 public class PIC006Model {
     @Id
@@ -21,35 +25,4 @@ public class PIC006Model {
     @Lob
     private byte[] data;
 
-    public Timestamp getPlog() {
-        return plog;
-    }
-
-    public void setPlog(Timestamp plog) {
-        this.plog = plog;
-    }
-
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pid) {
-        this.pid = pid;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
-    }
 }

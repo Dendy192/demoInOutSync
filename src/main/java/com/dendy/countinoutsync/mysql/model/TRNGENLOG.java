@@ -7,16 +7,21 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "MSTGATE")
-public class MSTGATE {
+@Table(name = "TRNGENLOG")
+public class TRNGENLOG {
     @Id
-    @Column(name = "MSTID")
+    @Column(name = "TRNLOG")
+    private Timestamp log;
+
+    @Column(name = "TRNID")
     private String id;
 
-    @Column(name = "MSTLOKASI")
-    private String name;
+    @Column(name = "TRNTYPE")
+    private int type;
 
 }

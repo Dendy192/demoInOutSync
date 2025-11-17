@@ -1,4 +1,4 @@
-package com.dendy.countinoutsync.firebird.primary.model;
+package com.dendy.countinoutsync.mysql.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "SYSACCESS")
-public class SYSACCESModel {
+@Table(name = "MSTPERUSH")
+public class MSTPERUSH {
     @Id
-    @Column(name = "USID")
-    private String id;
+    @Column(name = "MSTNAME")
+    private String name;
 
-    @Column(name = "USNAME")
-    private String username;
+    @Column(name = "MSTACTIVE")
+    private int status;
 
 }
